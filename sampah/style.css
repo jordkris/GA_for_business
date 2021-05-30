@@ -1,0 +1,27 @@
+.bg_general {
+  background-image: url("./dna2.jpg");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 5%;
+   width: 100%;
+   background-color: green;
+   color: white;
+   text-align: center;
+}
+#myProgress {
+  width: 100%;
+  background-color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: green;
+}

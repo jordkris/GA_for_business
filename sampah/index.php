@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bisnis Kos GA</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/5e59a4bfec.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./ga.css">
+</head>
+<body class="bg_general mr-3 ml-3" >
+	<br />
+	<br />
+	<h1 class="text-center">Bisnis Kos Genetic Algorithm</h1>
+	<hr />
+	<div class="row">
+		<div class="col-lg-6">
+			<!-- Isi di sini -->
+		</div>
+		<div class="col-lg-6">
+			<div>
+				<table id="input_data" border="1" class="text-center" style="height: 100%;width: 95%;"></table>
+			</div>
+			<div class="pt-3">
+				<table border="1" class="text-center" style="height: 100%;width: 95%;">
+					<tr>
+						<th colspan="2">Banyak Data</th>
+						<th>Threshold</th>
+						<th>Banyak Generasi</th>
+						<th>Elitism</th>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="number" id="item_count" min="1" max="10" placeholder="Jumlah Data" style="width: 120px;">
+							<button class="btn btn-primary" onclick="creatediv()">Generate <i class="fas fa-table"></i></button>
+						</td>
+						<td>
+							<input type="number" id="threshold"  min="1" placeholder="Threshold" style="width: 100px;">
+						</td>
+						<td>
+							<input type="number" id="num_gen" placeholder="Jumlah Generasi" min="3" max="50" style="width: 150px;">
+						</td>
+						<td>
+							<input type="checkbox" id="elitism">
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="pt-3">
+				<button id="btn3" class="btn btn-warning col-lg-5" onclick="randomjsonvalue()">Generate Random Value <i class="fas fa-brain"></i></button>
+				<button id="btn2" class="btn btn-danger col-lg-3" onclick="clearjsonvalue()">Clear Data <i class="fas fa-trash-alt"></i></button>
+				<button id="btn" class="btn btn-success col-lg-3" onclick="generatejsonvalue()">Process Data <i class="fas fa-hourglass-half"></i></button>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div id="myProgress" class="text-center">
+			<div id="myBar" class="text-right" style="color: white;"></div>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="card" style="width:20%;opacity: 95%">
+		  <div class="card-header">Data</div>
+		  <div class="card-body">
+		  	<div id="div1" style="height: 90%;position:relative;">
+				<div id="div2" style="max-height:350px;overflow:auto;background-color: black;">
+					<div id="msg">
+			            <pre style="color: green;"></pre>
+			        </div>
+				</div>
+			</div>
+		  </div>
+		</div>
+		<div class="card" style="width: 25%;opacity: 95%">
+		  <div class="card-header">Data Processing Output</div>
+		  <div class="card-body">
+		  	<div id="div1" style="height: 90%;position:relative;">
+				<div id="div2" style="max-height:350px;overflow:auto;background-color: black;">
+					<div id="output" class="col-lg" style="height:100%;border:5px solid black;background-color: black;color: white;">
+					</div>
+				</div>
+			</div>
+		  </div>
+		</div>
+		<div class="card" style="width: 55%;opacity: 95%">
+		  <div class="card-header">Grafik</div>
+		  <div class="card-body">
+		  	<canvas id="chart_ga"></canvas>
+		  </div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+<!-- 	<script src="./ga.js"></script> -->
+	<script src="./ga.js"></script>
+</html>
