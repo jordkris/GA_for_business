@@ -9,13 +9,19 @@
 <body class="bg_general mr-3 ml-3" >
 	<br />
 	<br />
-	<h1 class="text-center">Bisnis Kos Genetic Algorithm</h1>
+	<h1 class="text-center">Genetic Algorithm for Boarding House Business</h1>
 	<hr />
 	<div class="row">
 		<div class="col-lg-6">
-			<!-- Isi di sini -->
-			<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15838.514696255825!2d110.43041976698812!3d-7.052844523057553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c1cc3e9a915%3A0x5027a76e356dcb0!2sTembalang%2C%20Kec.%20Tembalang%2C%20Kota%20Semarang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1610785418585!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
-			<img src="./temp 2/dna.png" style="zoom:80%">
+			<p> How to use? </p>
+			<ol>
+				<li class="step">Fill the Data Count (1 to 10)</li>
+				<li class="step">Click Generate Button</li>
+				<li class="step">Click Generate Random Value Button or if you have some custom data, you can input manually</li>
+				<li class="step">CLick Process Data Button</li>
+				<li class="step">Click Clear Data Button if you want to clear all data</li>
+			</ol>
+			<a class="btn btn-dark" href="https://github.com/jordy-k/GA_for_business" target="_blank"><i class="fab fa-github fa-5x">GitHub</i></a>
 		</div>
 		<div class="col-lg-6">
 			<div>
@@ -24,21 +30,21 @@
 			<div class="pt-3">
 				<table border="1" class="text-center" style="height: 100%;width: 95%;">
 					<tr>
-						<th colspan="2">Banyak Data</th>
+						<th colspan="2">Boarding House Count</th>
 						<th>Threshold</th>
-						<th>Banyak Generasi</th>
-						<th>Elitism</th>
+						<th>Generation Count</th>
+						<th>Elitism?</th>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="number" id="item_count" min="1" max="10" placeholder="Banyak Data" style="width: 120px;">
+							<input type="number" id="item_count" min="1" max="10" placeholder="Data Count" style="width: 120px;">
 							<button class="btn btn-primary" onclick="creatediv()">Generate <i class="fas fa-table"></i></button>
 						</td>
 						<td>
 							<input type="number" id="threshold"  min="1" placeholder="Threshold" style="width: 100px;">
 						</td>
 						<td>
-							<input type="number" id="num_gen" placeholder="Banyak Generasi" min="3" max="50" style="width: 150px;">
+							<input type="number" id="num_gen" placeholder="Generation Count" min="3" max="50" style="width: 150px;">
 						</td>
 						<td>
 							<input type="checkbox" id="elitism">
@@ -86,7 +92,7 @@
 		  </div>
 		</div>
 		<div class="card" style="width: 55%;opacity: 95%">
-		  <div class="card-header">Grafik</div>
+		  <div class="card-header">Graph</div>
 		  <div class="card-body">
 		  	<canvas id="chart_ga"></canvas>
 		  </div>

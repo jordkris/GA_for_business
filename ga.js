@@ -27,13 +27,13 @@ function printed_value(best_pop, best_result, numgenerations) {
   }
   var temp = types.toString();
   if(types.length % 3 == 0) {
-    types = types.replace(temp.substr(-3,3),'dan '+temp.substr(-3,1)); 
+    types = types.replace(temp.substr(-3,3),'and '+temp.substr(-3,1)); 
   } else {
-    types = types.replace(temp.substr(-4,4),'dan '+temp.substr(-4,2)); 
+    types = types.replace(temp.substr(-4,4),'and '+temp.substr(-4,2)); 
   }
   console.log('test : '+temp+' '+types);
-  types += ' dengan total Rp '+best_result[numgenerations-1];
-  types = 'Tipe kos yang memaksimalkan keuntungan : '+types;
+  types += ' with a total IDR '+best_result[numgenerations-1];
+  types = 'The type of boarding house that maximizes profits : '+types;
   printed(types);
   return types;
 }
@@ -120,7 +120,7 @@ function creategraph(best, mean, worst, num_gen) {
               },
               scaleLabel: {
                   display: true,
-                  labelString: 'Total Keuntungan (Rp)'
+                  labelString: 'Total Profit (IDR)'
               },
               
           }],
@@ -131,7 +131,7 @@ function creategraph(best, mean, worst, num_gen) {
               },
               scaleLabel: {
                   display: true,
-                  labelString: 'Generasi Ke-'
+                  labelString: 'N-th Generation'
               },
               
           }]
@@ -154,7 +154,7 @@ function creategraph(best, mean, worst, num_gen) {
             callbacks: {
               label: function(tooltipItem, chart) {
                 var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-                return datasetLabel + ' : Rp ' + number_format(tooltipItem.yLabel);
+                return datasetLabel + ' : IDR ' + number_format(tooltipItem.yLabel);
               }
             }
           }
@@ -368,8 +368,8 @@ function process_data(kosts) {
       threshold = kosts[0].threshold;
       for(var i=2; i<kosts.length;i++) {
         item_number.push(i-1);
-        area.push(kosts[i].luas);
-        gain.push(kosts[i].keuntungan);
+        area.push(kosts[i].area);
+        gain.push(kosts[i].profit);
       }
       item_count = item_number.length;
       var elitism;
@@ -417,8 +417,8 @@ function generatejsonvalue(){
   for(var i=1; i<=count;i++) {
     kost = {
       id: i,
-      luas: parseInt(document.getElementById('item-'+i).value),
-      keuntungan: parseInt(document.getElementById('gain-'+i).value)
+      area: parseInt(document.getElementById('item-'+i).value),
+      profit: parseInt(document.getElementById('gain-'+i).value)
     };
     kosts.push(kost);
   }
@@ -457,7 +457,7 @@ function clearjsonvalue(){
     document.getElementById('gain-'+i).value = null;
   }
   setTimeout(function(){
-    alert('Data berhasil dibersihkan!');
+    alert('Data cleared successfully!');
   },500);
 }
 
@@ -488,7 +488,7 @@ function creatediv() {
   var input_data = document.getElementById("input_data");
   console.log('total item : '+item_count);
   var start,label0,input1,input2,end;
-  input_data.innerHTML = '<tr><th>Tipe Kos</th><th>Luas (m<sup>2</sup>)</th><th>Keuntungan</th></tr>';
+  input_data.innerHTML = '<tr><th>Boarding House Type</th><th>Area (m<sup>2</sup>)</th><th>Profit</th></tr>';
   for(var i=1; i<=item_count;i++) {
     start = '<tr>';
     label0 = '<td>'+i+'</td>';
